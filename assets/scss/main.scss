@@ -1,0 +1,75 @@
+@use "sass:map";
+@import "colors";
+@import "mixins";
+@import "base";
+@import "display";
+@import "border";
+@import "cursor";
+@import "text";
+@import "align";
+@import "justify";
+@import "position";
+@import "size";
+
+h1 {
+  @include responsive-font(h1)
+}
+
+h2 {
+  @include responsive-font(h2)
+}
+
+h3 {
+  @include responsive-font(h3)
+}
+
+.section-txt {
+  @include responsive-font(section)
+}
+
+.subtitle-txt {
+  @include responsive-font(subtitle)
+}
+
+.body-txt {
+  @include responsive-font(body)
+}
+
+.small-body-txt {
+  @include responsive-font(small-body)
+}
+
+.buttons-txt {
+  @include responsive-font(buttons)
+}
+
+@include generate-font-weight-classes;
+@include generate-text-colors($colors-text);
+@include generate-bg-colors($colors-bg);
+@include generate-bg-gradients($gradients-bg);
+@include generate-text-gradients($gradients-text);
+
+.p-scrollpanel {
+  overflow: hidden;
+}
+
+.p-scrollpanel-bar-y {
+  background: black;
+  opacity: 0.4;
+  outline: initial;
+  visibility: hidden;
+  @media (min-width: 1024px) {
+  visibility: visible;
+    }
+}
+
+.p-scrollpanel-bar-x {
+  visibility: hidden;
+}
+
+.p-scrollpanel-content {
+  @extend %flex-base;
+
+  flex-direction: column;
+  justify-content: flex-start;
+}

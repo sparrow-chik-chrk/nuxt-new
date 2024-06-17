@@ -1,0 +1,24 @@
+/* text */
+.t-a {
+  &-center {
+    text-align: center;
+  }
+
+  &-start {
+    text-align: start;
+  }
+
+  &-end {
+    text-align: end;
+  }
+
+  &-justify {
+    text-align: justify;
+  }
+}
+
+.t-t {
+  &-upper{
+    text-transform: uppercase;
+  }
+}

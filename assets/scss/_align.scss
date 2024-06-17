@@ -1,0 +1,35 @@
+.a {
+  &-i {
+    &-cen {
+      align-items: center;
+    }
+
+    &-flst {
+      align-items: flex-start;
+    }
+
+    &-flend {
+      align-items: flex-end;
+    }
+
+    &-stretch {
+      align-items: stretch;
+    }
+  }
+
+  &-s {
+    &-cen {
+      align-self: center;
+    }
+
+    &-flst {
+      align-self: flex-start;
+    }
+
+    &-flend {
+      align-self: flex-end;
+    }
+  }
+}
+
+

@@ -1,0 +1,51 @@
+{
+  "name": "example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@animxyz/core": "^0.6.6",
+    "@animxyz/vue3": "^0.6.7",
+    "@nuxt/eslint": "^0.3.13",
+    "@pinia/nuxt": "^0.5.1",
+    "@vee-validate/nuxt": "^4.13.1",
+    "@vee-validate/yup": "^4.13.1",
+    "date-fns": "^3.6.0",
+    "nuxt": "^3.11.2",
+    "nuxt-marquee": "^1.0.4",
+    "nuxtjs-naive-ui": "^1.0.2",
+    "pinia": "^2.1.7",
+    "primeicons": "^7.0.0",
+    "primevue": "^3.52.0",
+    "scss": "^0.2.4",
+    "stylelint": "^16.6.1",
+    "swiper": "^11.1.4",
+    "unplugin-auto-import": "^0.17.6",
+    "unplugin-vue-components": "^0.27.0",
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.2",
+    "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "@nuxt/fonts": "^0.7.0",
+    "@nuxt/image": "^1.7.0",
+    "@nuxtjs/i18n": "^8.3.1",
+    "@nuxtjs/seo": "^2.0.0-rc.10",
+    "@vueuse/nuxt": "^10.10.0",
+    "naive-ui": "^2.38.2",
+    "nuxt-icon": "^0.6.10",
+    "nuxt-primevue": "^3.0.0",
+    "nuxt-swiper": "^1.2.2",
+    "sharp": "^0.33.4",
+    "vite-svg-loader": "^5.1.0",
+    "webpack-bundle-analyzer": "^4.10.2"
+  }
+}

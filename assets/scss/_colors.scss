@@ -1,0 +1,28 @@
+$colors-text: (
+        "white": #FFF,
+        "gray": #CCC,
+        "secondary": #BDBDBD,
+        "black": #000
+);
+$colors-bg: (
+        "bg": #000
+);
+$gradients-bg: (
+        "main-grad": linear-gradient(to right, rgb(255 255 255 / 10%) 0%, #fff 49%, rgb(255 255 255 / 13%) 100%),
+);
+$gradients-text: (
+        "main-grad": linear-gradient(to right, rgb(255 255 255 / 10%) 0%, #fff 49%, rgb(255 255 255 / 13%) 100%),
+);
+
+:root{
+  --gray:  #ccc;
+}
+
+.bg-none{
+  background: none;
+}
+
+.color-none {
+  color: transparent;
+}
+

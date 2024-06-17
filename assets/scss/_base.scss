@@ -1,0 +1,45 @@
+@layer reset {
+  * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    line-height: 0;
+  }
+}
+
+html {
+  font-size: 10px;
+  width: 100%;
+
+  body {
+    height: auto;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow-x: hidden;
+    text-align: center;
+    width: 100%;
+
+    /* stylelint-disable selector-id-pattern */
+    #__nuxt {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+/* section, main, footer, header {
+  min-width: 100vw;
+} */
+section, main, footer, header {
+    min-width: 100vw;
+}
+
+main {
+    height: auto;
+    position: relative;
+}
+
+

@@ -1,0 +1,49 @@
+$font-weights: (
+        "300": 300, "400": 400, "600": 600, "700": 700
+);
+$font-styles: (
+        "h1": (
+                "1440": (50px, 100%),
+                "768": (40px, 100%),
+                "375": (32px, 100%)
+        ),
+        "h2": (
+                "1440": (32px, 40px),
+                "768": (28px, 34px),
+                "375": (24px, 30px)
+        ),
+        "h3": (
+                "375": (24px, 32px)
+        ),
+        "section": (
+                "1440": (64px, 64px),
+                "768": (50px, 64px),
+                "375": (36px, 42px)
+        ),
+        "subtitle": (
+                "1440": (20px, 100%),
+                "375": (18px, 100%)
+        ),
+        "body": (
+                "375": (16px, 22px)
+        ),
+        "small-body": (
+                "375": (14px, 150%)
+        ),
+        "buttons": (
+                "375": (16px, 100%)
+        ),
+);
+
+.sansation {
+  font-family: "Sansation", sans-serif
+}
+
+.barlow {
+  font-family: "Barlow", sans-serif
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif
+}
+

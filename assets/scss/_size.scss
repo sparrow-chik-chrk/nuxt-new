@@ -1,0 +1,27 @@
+.h {
+  &-100 {
+    height: 100%;
+  }
+
+  &-auto {
+    height: auto;
+  }
+
+  &-screen {
+    height: 100vh;
+  }
+}
+
+.w {
+  &-100 {
+    width: 100%;
+  }
+
+  &-auto {
+    width: auto;
+  }
+
+  &-screen {
+    width: 100vw;
+  }
+}

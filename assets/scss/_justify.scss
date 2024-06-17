@@ -1,0 +1,55 @@
+.j {
+  &-c {
+    &-cen {
+      justify-content: center;
+    }
+
+    &-flst {
+      justify-content: flex-start;
+    }
+
+    &-flend {
+      justify-content: flex-end;
+    }
+
+    &-between {
+      justify-content: space-between;
+    }
+
+    &-around {
+      justify-content: space-around;
+    }
+
+    &-evenly {
+      justify-content: space-evenly;
+    }
+  }
+
+  &-i {
+    &-cen {
+      justify-items: center;
+    }
+
+    &-flst {
+      justify-items: flex-start;
+    }
+
+    &-flend {
+      justify-items: flex-end;
+    }
+  }
+
+  &-s {
+    &-cen {
+      justify-self: center;
+    }
+
+    &-flst {
+      justify-self: flex-start;
+    }
+
+    &-flend {
+      justify-self: flex-end;
+    }
+  }
+}
