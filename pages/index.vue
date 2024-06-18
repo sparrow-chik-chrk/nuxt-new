@@ -1,6 +1,6 @@
 <template>
   <div>
-<!--    <MainTitleBlock/>    -->
+    <!--    <MainTitleBlock/>    -->
   </div>
 </template>
 

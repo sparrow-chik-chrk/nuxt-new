@@ -4,11 +4,11 @@
 
 <template>
   <PrimeScrollPanel style="width: 100%; height: 100vh">
-<!--    <AppHeader/>-->
+    <!--    <AppHeader/>-->
     <main>
       <slot/>
     </main>
-<!--    <AppFooter/>-->
+    <!--    <AppFooter/>-->
   </PrimeScrollPanel>
 </template>
 

@@ -4,7 +4,7 @@ import svgLoader from "vite-svg-loader"
 // import Components from "unplugin-vue-components/vite"
 // import {NaiveUiResolver} from "unplugin-vue-components/resolvers"
 
-const {BundleAnalyzerPlugin} = require("webpack-bundle-analyzer");
+// const {BundleAnalyzerPlugin} = require("webpack-bundle-analyzer");
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 require("dotenv").config()
@@ -28,16 +28,16 @@ export default defineNuxtConfig({
 
     },
     build: {
-        plugins: [
-            new BundleAnalyzerPlugin({
-                analyzerMode: "static",
-                reportFilename: "bundle-report.html",
-                openAnalyzer: true
-            })
-        ],
-        rollupOptions: {
-            external: [/\.wasm$/]
-        }
+        // plugins: [
+        //     new BundleAnalyzerPlugin({
+        //         analyzerMode: "static",
+        //         reportFilename: "bundle-report.html",
+        //         openAnalyzer: true
+        //     })
+        // ],
+        // rollupOptions: {
+        //     external: [/\.wasm$/]
+        // }
     },
     i18n: {
         baseUrl: "process.env.SITE_URL",
@@ -158,14 +158,22 @@ export default defineNuxtConfig({
             // Components({
             //     resolvers: [NaiveUiResolver()]
             // })
-        ]
+        ],
+        server: {
+            watch: {
+                usePolling: true,
+            },
+            hmr: {
+                port: 24678, // Порт для гарячої перезбірки
+            },
+        },
     },
     // module
     primevue: {
         usePrimeVue: true,
         components: {
             prefix: "Prime",
-            include: []
+            include: ["ScrollPanel"]
         },
         directives: {
             prefix: "p"
