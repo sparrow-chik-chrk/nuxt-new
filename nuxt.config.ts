@@ -1,7 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import svgLoader from "vite-svg-loader"
-// import AutoImport from "unplugin-auto-import/vite"
-// import Components from "unplugin-vue-components/vite"
+import { defineNuxtConfig } from 'nuxt/config'
+import AutoImport from "unplugin-auto-import/vite"
+import Components from "unplugin-vue-components/vite"
 // import {NaiveUiResolver} from "unplugin-vue-components/resolvers"
 
 // const {BundleAnalyzerPlugin} = require("webpack-bundle-analyzer");
@@ -50,7 +51,7 @@ export default defineNuxtConfig({
         strategy: "prefix_except_default",
         // інші налаштування i18n...
     },
-    css: ["primevue/resources/themes/aura-light-teal/theme.css", "@animxyz/core", "primeicons/primeicons.css", "assets/scss/main.scss"],
+    css: ["@animxyz/core", "primeicons/primeicons.css", "assets/scss/main.scss"],
     components: ["~/components"],
     devtools: {
         enabled: true,
@@ -105,13 +106,14 @@ export default defineNuxtConfig({
         "@nuxt/fonts",
         "nuxt-swiper",
         "@nuxtjs/seo",
-        "nuxt-primevue",
+        "@primevue/nuxt-module",
         "nuxt-marquee",
         "nuxt-icon",
         "@vee-validate/nuxt",
         // "nuxtjs-naive-ui",
         "@nuxtjs/i18n",
-        "@nuxt/eslint"
+        "@nuxt/eslint",
+        "@nuxtjs/strapi"
     ],
     // on Cloudflare Pages
     nitro: {
@@ -173,12 +175,11 @@ export default defineNuxtConfig({
         usePrimeVue: true,
         components: {
             prefix: "Prime",
-            include: ["ScrollPanel"]
+            include: ["ScrollPanel", "Tabs", "TabList", "Tab", "TabPanels", "TabPanel" ]
         },
         directives: {
             prefix: "p"
         },
-        cssLayerOrder: "reset,primevue"
     },
     swiper: {
         prefix: "Swiper",
