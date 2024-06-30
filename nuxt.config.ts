@@ -59,9 +59,9 @@ export default defineNuxtConfig({
         }
     },
     experimental: {
-        cookieStore: false,
+        cookieStore: true,
         headNext: true,
-        sharedPrerenderData: false
+        sharedPrerenderData: true
     },
     fonts: {
         // adobe: {
@@ -111,7 +111,9 @@ export default defineNuxtConfig({
         "@vee-validate/nuxt",
         // "nuxtjs-naive-ui",
         "@nuxtjs/i18n",
-        "@nuxt/eslint"
+        "@nuxt/eslint",
+        "nuxt-build-cache",
+        "@nuxtjs/strapi"
     ],
     // on Cloudflare Pages
     nitro: {
@@ -127,10 +129,16 @@ export default defineNuxtConfig({
         "~/plugins/vueAnimXyz.client.ts"
     ],
     runtimeConfig: {
+        strapi: {
+            url: process.env.API_URL,
+        },
         public: {
             apiUrl: process.env.API_URL,
             siteUrl: process.env.SITE_URL,
             mediaUrl: process.env.MEDIA_URL,
+            strapi: {
+                url: process.env.SITE_URL,
+            }
         }
     },
     router: {
