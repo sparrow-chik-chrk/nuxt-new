@@ -50,7 +50,7 @@ export default defineNuxtConfig({
         strategy: "prefix_except_default",
         // інші налаштування i18n...
     },
-    css: ["primevue/resources/themes/aura-light-teal/theme.css", "@animxyz/core", "primeicons/primeicons.css", "assets/scss/main.scss"],
+    css: ["@animxyz/core", "primeicons/primeicons.css", "assets/scss/main.scss"],
     components: ["~/components"],
     devtools: {
         enabled: true,
@@ -105,7 +105,7 @@ export default defineNuxtConfig({
         "@nuxt/fonts",
         "nuxt-swiper",
         "@nuxtjs/seo",
-        "nuxt-primevue",
+        "@primevue/nuxt-module",
         "nuxt-marquee",
         "nuxt-icon",
         "@vee-validate/nuxt",
@@ -186,7 +186,6 @@ export default defineNuxtConfig({
         directives: {
             prefix: "p"
         },
-        cssLayerOrder: "reset,primevue"
     },
     swiper: {
         prefix: "Swiper",
