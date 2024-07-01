@@ -1,6 +1,7 @@
 <template>
   <div>
     <!--    <MainTitleBlock/>    -->
+    <Title>Site</Title>
   </div>
 </template>
 

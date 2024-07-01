@@ -137,7 +137,7 @@ export default defineNuxtConfig({
             siteUrl: process.env.SITE_URL,
             mediaUrl: process.env.MEDIA_URL,
             strapi: {
-                url: process.env.SITE_URL,
+                url: process.env.API_URL,
             }
         }
     },
@@ -192,6 +192,10 @@ export default defineNuxtConfig({
         prefix: "Swiper",
         modules: []
         // modules: ["mousewheel", "navigation", "pagination", "effect-coverflow", "autoplay","free-mode"]
+    },
+    strapi: {
+        devtools: true,
+        cookieName: "str_jwt"
     },
     // seo
     site: {
