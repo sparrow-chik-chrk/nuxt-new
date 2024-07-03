@@ -1,24 +1,43 @@
 $colors-text: (
+  //use colors-{key} class
         "white": #FFF,
-        "gray": #CCC,
-        "secondary": #BDBDBD,
-        "black": #000
+        "bordo": #800,
+        "bordo-darker": #650404,
+        "gold-darker": #C69A44,
+        "gold-lighter": #E2C283,
+        "grey": #5E5E5E,
+        "grey-light": #C2C2C2,
+        "grey-background": #F3F3F3,
+        "yellow": #E9BA12,
+        "black": #1D1D1D,
+        "black-footer": #676767
 );
 $colors-bg: (
-        "bg": #000
+  //use bg-{key} class
+        "white": #FFF,
+        "bordo": #800,
+        "bordo-darker": #650404,
+        "gold-darker": #C69A44,
+        "gold-lighter": #E2C283,
+        "grey": #5E5E5E,
+        "grey-light": #C2C2C2,
+        "grey-background": #F3F3F3,
+        "yellow": #E9BA12,
+        "black": #1D1D1D,
+        "black-footer": #676767
 );
 $gradients-bg: (
-        "main-grad": linear-gradient(to right, rgb(255 255 255 / 10%) 0%, #fff 49%, rgb(255 255 255 / 13%) 100%),
+  //"main-grad": linear-gradient(to right, rgb(255 255 255 / 10%) 0%, #fff 49%, rgb(255 255 255 / 13%) 100%),
 );
 $gradients-text: (
-        "main-grad": linear-gradient(to right, rgb(255 255 255 / 10%) 0%, #fff 49%, rgb(255 255 255 / 13%) 100%),
+  //"main-grad": linear-gradient(to right, rgb(255 255 255 / 10%) 0%, #fff 49%, rgb(255 255 255 / 13%) 100%),
 );
 
-:root{
-  --gray:  #ccc;
+:root {
+  --gray: #ccc;
 }
 
-.bg-none{
+.bg-none {
   background: none;
 }
 

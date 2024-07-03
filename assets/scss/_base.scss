@@ -1,3 +1,5 @@
+@layer reset, primevue
+
 @layer reset {
   * {
     margin: 0;
@@ -9,15 +11,30 @@
   }
 }
 
+
+:root {
+  -webkit-font-smoothing: antialiased;
+  font-synthesis: none;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 html {
+  border: 0;
   font-size: 10px;
+  margin: 0;
+  padding: 0;
   width: 100%;
 
   body {
+    border: 0;
     height: auto;
+    margin: 0;
     min-height: 100vh;
     min-width: 100vw;
     overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
     text-align: center;
     width: 100%;
 
@@ -34,12 +51,12 @@ html {
   min-width: 100vw;
 } */
 section, main, footer, header {
-    min-width: 100vw;
+  min-width: 100vw;
 }
 
 main {
-    height: auto;
-    position: relative;
+  height: auto;
+  position: relative;
 }
 
 

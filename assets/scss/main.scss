@@ -53,14 +53,15 @@ h3 {
   overflow: hidden;
 }
 
+
 .p-scrollpanel-bar-y {
   background: black;
-  opacity: 0.4;
+  opacity: 0.1;
   outline: initial;
   visibility: hidden;
   @media (min-width: 1024px) {
-  visibility: visible;
-    }
+    visibility: visible;
+  }
 }
 
 .p-scrollpanel-bar-x {

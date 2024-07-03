@@ -3,9 +3,9 @@
 </script>
 
 <template>
-  <PrimeScrollPanel style="width: 100%; height: 100vh">
+  <PrimeScrollPanel class="w-100 h-screen">
     <!--    <AppHeader/>-->
-    <main>
+    <main class="flex-col h-auto pos-relative">
       <slot/>
     </main>
     <!--    <AppFooter/>-->

@@ -40,7 +40,7 @@ export default defineNuxtConfig({
         // }
     },
     i18n: {
-        baseUrl: "process.env.SITE_URL",
+        baseUrl: process.env.SITE_URL,
         vueI18n: "./i18n.config.ts",
         lazy: true,
         langDir: process.env.LANG_DIR,
@@ -77,23 +77,35 @@ export default defineNuxtConfig({
         inlineStyles: true,
     },
     image: {
-        // provider: "cloudflare",
-        // cloudflare: {
-        //     baseURL: process.env.CDN_CGI_URL,
-        // },
+        providers: {
+            strapiV2: {
+                provider: "~/providers/my-strapi.ts",
+                options: {
+                    baseURL: process.env.MEDIA_URL,
+                },
+            },
+        },
         quality: 90,
         screens: {
-            "xs": 319.9,
-            "sm": 374.9,
-            "md": 767.9,
-            "l": 1023.9,
-            "lg": 1199.9,
-            "xl": 1439.9,
-            "xxl": 1919.9,
-            "2xl": 2559.9
+            "sm-mob": 319.9,
+            "mob": 374.9,
+            "tab": 767.9,
+            "lap": 1023.9,
+            "big-lap": 1199.9,
+            "hd": 1439.9,
+            "fhd": 1919.9,
+            "2k": 2559.9
         },
         domains: [process.env.MEDIA_DOMAIN as string],
-        format: ["avif", "webp", "png"]
+        format: ["avif"],
+    },
+    icon: {
+        customCollections: [
+            {
+                prefix: "my-icon",
+                dir: "./assets/my-icons"
+            },
+        ],
     },
     imports: {
         dirs: ["stores"]
@@ -107,38 +119,36 @@ export default defineNuxtConfig({
         "@nuxtjs/seo",
         "@primevue/nuxt-module",
         "nuxt-marquee",
-        "nuxt-icon",
         "@vee-validate/nuxt",
         // "nuxtjs-naive-ui",
         "@nuxtjs/i18n",
         "@nuxt/eslint",
         "nuxt-build-cache",
-        "@nuxtjs/strapi"
+        "@nuxtjs/strapi",
+        "@nuxt/icon"
     ],
     // on Cloudflare Pages
     nitro: {
         prerender: {
             autoSubfolderIndex: false,
         },
-        // preset: "cloudflare-pages",
-        // preset: "cloudflare",
     },
-    //
     pages: true,
     plugins: [
         "~/plugins/vueAnimXyz.client.ts"
     ],
     runtimeConfig: {
+        apiUrl: process.env.API_URL,
         strapi: {
-            url: process.env.API_URL,
+            url: "",
         },
         public: {
-            apiUrl: process.env.API_URL,
             siteUrl: process.env.SITE_URL,
             mediaUrl: process.env.MEDIA_URL,
             strapi: {
-                url: process.env.API_URL,
-            }
+                url: process.env.SITE_URL,
+            },
+            jwt: process.env.STRAPI_TOKEN,
         }
     },
     router: {
@@ -186,6 +196,9 @@ export default defineNuxtConfig({
         directives: {
             prefix: "p"
         },
+        importTheme: {from: "@/themes/aura.js"},
+
+
     },
     swiper: {
         prefix: "Swiper",
@@ -194,7 +207,8 @@ export default defineNuxtConfig({
     },
     strapi: {
         devtools: true,
-        cookieName: "str_jwt"
+        cookieName: "str_jwt",
+        version: "v4",
     },
     // seo
     site: {
