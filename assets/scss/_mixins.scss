@@ -2,6 +2,7 @@
 @use "sass:map";
 
 @import "fonts";
+@import "border";
 @import "breakpoints";
 
 @mixin generate-text-colors($colors) {
@@ -67,13 +68,31 @@
   @each $bp-name, $bp-value in $breakpoints {
     @each $weight-name, $weight-value in $font-weights {
       @if $bp-value == 0 {
-        .f-w-#{$weight-name} {
+        .weight-#{$weight-name} {
           font-weight: $weight-value;
         }
       } @else {
-        .f-w-#{$weight-name}-#{$bp-value} {
-          @media(min-width: $bp-value+'px'){
-          font-weight: $weight-value;
+        .weight-#{$weight-name}-#{$bp-value} {
+          @media(min-width: $bp-value+"px") {
+            font-weight: $weight-value;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin generate-border-radius-classes {
+  @each $bp-name, $bp-value in $breakpoints {
+    @each $radius-name, $radius-value in $border-radius {
+      @if $bp-value == 0 {
+        .border-rad-#{$radius-name} {
+          border-radius: $radius-value;
+        }
+      } @else {
+        .border-rad-#{$radius-name}-#{$bp-value} {
+          @media(min-width: $bp-value+"px") {
+            border-radius: $radius-value;
           }
         }
       }

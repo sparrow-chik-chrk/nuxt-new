@@ -8,8 +8,16 @@
       align-items: flex-start;
     }
 
+    &-st {
+      align-items: start;
+    }
+
     &-flend {
       align-items: flex-end;
+    }
+
+    &-end {
+      align-items: end;
     }
 
     &-stretch {
@@ -28,6 +36,14 @@
 
     &-flend {
       align-self: flex-end;
+    }
+
+    &-st {
+      align-self: start;
+    }
+
+    &-end {
+      align-self: end;
     }
   }
 }

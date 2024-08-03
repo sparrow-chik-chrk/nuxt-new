@@ -1,5 +1,5 @@
 /* text */
-.t-a {
+.text {
   &-center {
     text-align: center;
   }
@@ -15,10 +15,21 @@
   &-justify {
     text-align: justify;
   }
-}
 
-.t-t {
-  &-upper{
+  &-upper {
     text-transform: uppercase;
   }
+
+  &-capitalize {
+    text-transform: capitalize;
+  }
+
+  &-lower {
+    text-transform: lowercase;
+  }
+
+  &-decor-none {
+    text-decoration: none;
+  }
+
 }

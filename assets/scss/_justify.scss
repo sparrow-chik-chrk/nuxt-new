@@ -12,6 +12,14 @@
       justify-content: flex-end;
     }
 
+    &-st {
+      justify-content: start;
+    }
+
+    &-end {
+      justify-content: end;
+    }
+
     &-between {
       justify-content: space-between;
     }
@@ -37,6 +45,14 @@
     &-flend {
       justify-items: flex-end;
     }
+
+    &-st {
+      justify-items: start;
+    }
+
+    &-end {
+      justify-items: end;
+    }
   }
 
   &-s {
@@ -50,6 +66,14 @@
 
     &-flend {
       justify-self: flex-end;
+    }
+
+    &-st {
+      justify-self: start;
+    }
+
+    &-end {
+      justify-self: end;
     }
   }
 }

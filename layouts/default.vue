@@ -3,16 +3,17 @@
 </script>
 
 <template>
-  <PrimeScrollPanel class="w-100 h-screen">
-    <!--    <AppHeader/>-->
-    <main class="flex-col h-auto pos-relative">
+  <PrimeScrollPanel class="w-screen h-screen">
+    <AppHeader/>
+    <main class="flex-col h-auto bg-white">
       <slot/>
     </main>
-    <!--    <AppFooter/>-->
+    <AppFooter/>
   </PrimeScrollPanel>
 </template>
 
-<style scoped>
-
-
+<style lang="scss" scoped>
+main {
+  justify-content: flex-start;
+}
 </style>

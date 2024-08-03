@@ -1,5 +1,5 @@
 .h {
-  &-100 {
+  &-full {
     height: 100%;
   }
 
@@ -10,10 +10,14 @@
   &-screen {
     height: 100vh;
   }
+
+  &-fit {
+    height: fit-content;
+  }
 }
 
 .w {
-  &-100 {
+  &-full {
     width: 100%;
   }
 
@@ -23,5 +27,9 @@
 
   &-screen {
     width: 100vw;
+  }
+
+  &-fit {
+    width: fit-content;
   }
 }

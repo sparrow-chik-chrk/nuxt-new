@@ -16,6 +16,7 @@
   -webkit-font-smoothing: antialiased;
   font-synthesis: none;
   -moz-osx-font-smoothing: grayscale;
+  --p-ripple-background: rgba(158, 158, 158, 0.7);
   text-rendering: optimizeLegibility;
 }
 
@@ -54,9 +55,29 @@ section, main, footer, header {
   min-width: 100vw;
 }
 
-main {
+main, header > .content, footer > .content {
   height: auto;
+  max-width: 28rem;
+  min-width: 28rem;
   position: relative;
+  @media (min-width: 768px) {
+    max-width: 69.8rem;
+    min-width: 69.8rem;
+  }
+  @media (min-width: 1440px) {
+    max-width: 136.4rem;
+    min-width: 136.4rem;
+
+  }
+
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+a {
+  line-height: 0;
 }
 
 

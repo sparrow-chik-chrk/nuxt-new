@@ -5,9 +5,10 @@
 }
 
 .flex {
+
   &-row {
     @extend %flex-base;
-    
+
     flex-direction: row;
   }
 
@@ -27,5 +28,13 @@
 }
 
 .grid {
-    display: grid;
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+.hidden {
+  display: none;
 }

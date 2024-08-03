@@ -1,8 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import svgLoader from "vite-svg-loader"
-// import AutoImport from "unplugin-auto-import/vite"
-// import Components from "unplugin-vue-components/vite"
-// import {NaiveUiResolver} from "unplugin-vue-components/resolvers"
+import AutoImport from "unplugin-auto-import/vite"
+import Components from "unplugin-vue-components/vite"
+import {NaiveUiResolver} from "unplugin-vue-components/resolvers"
 
 // const {BundleAnalyzerPlugin} = require("webpack-bundle-analyzer");
 
@@ -40,6 +40,7 @@ export default defineNuxtConfig({
         // }
     },
     i18n: {
+        debug: false,
         baseUrl: process.env.SITE_URL,
         vueI18n: "./i18n.config.ts",
         lazy: true,
@@ -48,6 +49,8 @@ export default defineNuxtConfig({
         defaultDirection: "ltr",
         locales: process.env.LOCALES ? JSON.parse(process.env.LOCALES) : [],
         strategy: "prefix_except_default",
+        skipSettingLocaleOnNavigate: true,
+        detectBrowserLanguage: false
         // інші налаштування i18n...
     },
     css: ["@animxyz/core", "primeicons/primeicons.css", "assets/scss/main.scss"],
@@ -103,7 +106,7 @@ export default defineNuxtConfig({
         customCollections: [
             {
                 prefix: "my-icon",
-                dir: "./assets/my-icons"
+                dir: "./public/my-icons"
             },
         ],
     },
@@ -120,7 +123,7 @@ export default defineNuxtConfig({
         "@primevue/nuxt-module",
         "nuxt-marquee",
         "@vee-validate/nuxt",
-        // "nuxtjs-naive-ui",
+        "nuxtjs-naive-ui",
         "@nuxtjs/i18n",
         "@nuxt/eslint",
         "nuxt-build-cache",
@@ -156,6 +159,11 @@ export default defineNuxtConfig({
             scrollBehaviorType: "smooth",
         }
     },
+    // vue: {
+    //     compilerOptions: {
+    //         isCustomElement: (tag) => tag === "tbx-modal"
+    //     }
+    // },
     vite: {
         plugins: [
             svgLoader({
@@ -194,11 +202,12 @@ export default defineNuxtConfig({
             include: ["ScrollPanel"]
         },
         directives: {
-            prefix: "p"
+            include: ["Ripple", "Tooltip"]
+        },
+        options: {
+            ripple: true,
         },
         importTheme: {from: "@/themes/aura.js"},
-
-
     },
     swiper: {
         prefix: "Swiper",
@@ -210,15 +219,18 @@ export default defineNuxtConfig({
         cookieName: "str_jwt",
         version: "v4",
     },
+    pinia: {
+        storesDirs: ["./stores/**",]
+    },
     // seo
     site: {
         url: process.env.SITE_URL,
-        name: process.env.NAME_ORGANIZATION,
+        name: process.env.NAME_SITE,
         defaultLocale: "uk",
     },
     seo: {
         fallbackTitle: true,
-        redirectToCanonicalSiteUrl: true
+        redirectToCanonicalSiteUrl: false
     },
     ogImage: {enabled: false},
     robots: {
