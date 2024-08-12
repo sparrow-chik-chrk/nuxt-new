@@ -1,0 +1,101 @@
+@use "sass:list";
+@use "sass:map";
+
+@import "fonts";
+@import "border";
+@import "breakpoints";
+
+@mixin generate-text-colors($colors) {
+  @each $name, $color in $colors {
+    .color-#{$name} {
+      color: $color;
+    }
+  }
+}
+
+@mixin generate-bg-colors($colors) {
+  @each $name, $color in $colors {
+    .bg-#{$name} {
+      background-color: $color;
+    }
+  }
+}
+
+@mixin generate-bg-gradients($gradients) {
+  @each $name, $gradient in $gradients {
+    .bg-#{$name} {
+      background: $gradient;
+    }
+  }
+}
+
+@mixin generate-text-gradients($gradients) {
+  @each $name, $gradient in $gradients {
+    .color-#{$name} {
+      background: $gradient;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+}
+
+@mixin font-size($element, $size) {
+  font-size: list.nth($size, 1);
+  line-height: list.nth($size, 2);
+}
+
+@mixin responsive-font($key) {
+  $last-applied-style: null;
+
+  @each $bp-name, $bp-value in $breakpoints {
+    @if map-has-key($font-styles, $key) and map-has-key(map.get($font-styles, $key), $bp-name) {
+      $last-applied-style: map.get(map.get($font-styles, $key), $bp-name);
+    }
+
+    @if $last-applied-style {
+      @if $bp-value == 0 {
+        @include font-size($key, $last-applied-style);
+      } @else {
+        @media (min-width: #{$bp-value}px) {
+          @include font-size($key, $last-applied-style);
+        }
+      }
+    }
+  }
+}
+
+@mixin generate-font-weight-classes {
+  @each $bp-name, $bp-value in $breakpoints {
+    @each $weight-name, $weight-value in $font-weights {
+      @if $bp-value == 0 {
+        .weight-#{$weight-name} {
+          font-weight: $weight-value;
+        }
+      } @else {
+        .weight-#{$weight-name}-#{$bp-value} {
+          @media(min-width: $bp-value+"px") {
+            font-weight: $weight-value;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin generate-border-radius-classes {
+  @each $bp-name, $bp-value in $breakpoints {
+    @each $radius-name, $radius-value in $border-radius {
+      @if $bp-value == 0 {
+        .border-rad-#{$radius-name} {
+          border-radius: $radius-value;
+        }
+      } @else {
+        .border-rad-#{$radius-name}-#{$bp-value} {
+          @media(min-width: $bp-value+"px") {
+            border-radius: $radius-value;
+          }
+        }
+      }
+    }
+  }
+}

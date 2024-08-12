@@ -1,0 +1,35 @@
+.h {
+  &-full {
+    height: 100%;
+  }
+
+  &-auto {
+    height: auto;
+  }
+
+  &-screen {
+    height: 100vh;
+  }
+
+  &-fit {
+    height: fit-content;
+  }
+}
+
+.w {
+  &-full {
+    width: 100%;
+  }
+
+  &-auto {
+    width: auto;
+  }
+
+  &-screen {
+    width: 100vw;
+  }
+
+  &-fit {
+    width: fit-content;
+  }
+}

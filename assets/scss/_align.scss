@@ -1,0 +1,51 @@
+.a {
+  &-i {
+    &-cen {
+      align-items: center;
+    }
+
+    &-flst {
+      align-items: flex-start;
+    }
+
+    &-st {
+      align-items: start;
+    }
+
+    &-flend {
+      align-items: flex-end;
+    }
+
+    &-end {
+      align-items: end;
+    }
+
+    &-stretch {
+      align-items: stretch;
+    }
+  }
+
+  &-s {
+    &-cen {
+      align-self: center;
+    }
+
+    &-flst {
+      align-self: flex-start;
+    }
+
+    &-flend {
+      align-self: flex-end;
+    }
+
+    &-st {
+      align-self: start;
+    }
+
+    &-end {
+      align-self: end;
+    }
+  }
+}
+
+

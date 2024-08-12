@@ -1,0 +1,40 @@
+%flex-base {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.flex {
+
+  &-row {
+    @extend %flex-base;
+
+    flex-direction: row;
+  }
+
+  &-col {
+    @extend %flex-base;
+
+    flex-direction: column;
+  }
+
+  &-wrap {
+    flex-wrap: wrap;
+  }
+}
+
+.block {
+  display: block;
+}
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}

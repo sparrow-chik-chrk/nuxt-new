@@ -1,0 +1,49 @@
+$colors-text: (
+  //use colors-{key} class
+        "white": #FFF,
+        "bordo": #800,
+        "bordo-darker": #650404,
+        "gold-darker": #C69A44,
+        "gold-lighter": #E2C283,
+        "grey": #5E5E5E,
+        "grey-light": #C2C2C2,
+        "grey-background": #F3F3F3,
+        "yellow": #E9BA12,
+        "black": #1D1D1D,
+        "black-footer": #676767
+);
+$colors-bg: (
+  //use bg-{key} class
+        "white": #FFF,
+        "bordo": #800,
+        "bordo-darker": #650404,
+        "gold-darker": #C69A44,
+        "gold-lighter": #E2C283,
+        "grey": #5E5E5E,
+        "cancel": #D5D5D566,
+        "grey-light": #C2C2C2,
+        "grey-background": #F3F3F3,
+        "yellow": #E9BA12,
+        "black": #1D1D1D,
+        "black-10": rgba(29, 29, 29, 0.1),
+        "black-footer": #676767
+);
+$gradients-bg: (
+        "black-grad": linear-gradient(to bottom, rgba(0, 0, 0, 0) 3%, rgb(0, 0, 0) 100%),
+);
+$gradients-text: (
+  //"main-grad": linear-gradient(to right, rgb(255 255 255 / 10%) 0%, #fff 49%, rgb(255 255 255 / 13%) 100%),
+);
+
+:root {
+  --gray: #ccc;
+}
+
+.bg-none {
+  background: none;
+}
+
+.color-none {
+  color: transparent;
+}
+

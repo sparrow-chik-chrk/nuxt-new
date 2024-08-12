@@ -1,0 +1,16 @@
+/* border */
+$border-radius: (
+  //use border-rad-{key} class or border-rad-{key}-{breakpoint}
+        "3":0.3rem, "7":0.7rem, "15":1.5rem, "26":2.6rem, "30":3rem, "38":3.8rem, "48":4.8rem, "300":30rem,
+);
+.border-none {
+  border: none;
+}
+
+.border-rad-0 {
+  border-radius: 0;
+}
+
+.border {
+  border: black solid 1px;
+}
