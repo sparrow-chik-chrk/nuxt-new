@@ -1,0 +1,53 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@animxyz/core": "^0.6.6",
+    "@animxyz/vue3": "^0.6.7",
+    "@nuxt/eslint": "^0.5.0",
+    "@nuxt/fonts": "^0.7.1",
+    "@nuxt/icon": "^1.4.5",
+    "@nuxt/image": "^1.7.0",
+    "@nuxthub/core": "^0.7.1",
+    "@nuxtjs/i18n": "^8.3.3",
+    "@nuxtjs/seo": "^2.0.0-rc.18",
+    "@nuxtjs/strapi": "^1.12.0",
+    "@nuxtjs/turnstile": "^0.9.3",
+    "@pinia/nuxt": "^0.5.3",
+    "@primevue/themes": "^4.0.4",
+    "@vueuse/core": "^10.11.1",
+    "@vueuse/nuxt": "^10.11.1",
+    "date-fns": "^3.6.0",
+    "dotenv": "^16.4.5",
+    "nuxt": "^3.12.4",
+    "nuxt-build-cache": "^0.1.1",
+    "nuxt-marquee": "^1.0.4",
+    "nuxt-swiper": "^1.2.2",
+    "nuxtjs-naive-ui": "^1.0.2",
+    "pinia": "^2.2.1",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.0.4",
+    "sass": "^1.77.8",
+    "scss": "^0.2.4",
+    "unplugin-auto-import": "^0.18.2",
+    "unplugin-vue-components": "^0.27.4",
+    "vite-svg-loader": "^5.1.0",
+    "vue": "^3.4.37",
+    "vue-router": "^4.4.3"
+  },
+  "devDependencies": {
+    "@primevue/nuxt-module": "^4.0.4",
+    "stylelint": "^16.8.1",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-config-standard-vue": "^1.0.0",
+    "wrangler": "^3.70.0"
+  }
+}
