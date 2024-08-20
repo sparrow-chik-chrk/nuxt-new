@@ -14,6 +14,7 @@ export default defineNuxtConfig({
             keywords: "",
             charset: "utf-8",
             viewport: "width=device-width, initial-scale=1.0",
+            author: "Studnykov Danylo, Tg: @gnizDoIt",
             mobileWebAppCapable: "yes",
             appleMobileWebAppCapable: "yes",
             formatDetection: "telephone=yes",
@@ -42,7 +43,7 @@ export default defineNuxtConfig({
 
     i18n: {
         debug: false,
-        baseUrl: process.env.NUXT_PUBLIC_SITE_URL,
+        baseUrl: `https://${process.env.NUXT_PUBLIC_SUBDOMAIN || ""}${(process.env.NUXT_PUBLIC_SUBDOMAIN && process.env.NUXT_PUBLIC_SUBDOMAIN !== "") ? "." : ""}${process.env.NUXT_PUBLIC_DOMAIN}`,
         vueI18n: "./i18n.config.ts",
         lazy: true,
         langDir: process.env.LANG_DIR,
@@ -60,8 +61,7 @@ export default defineNuxtConfig({
         // інші налаштування i18n...
     },
 
-    css: ["@animxyz/core", "primeicons/primeicons.css", "assets/scss/main.scss"],
-
+    css: ["primevue/resources/themes/aura-light-teal/theme.css", "@animxyz/core", "primeicons/primeicons.css", "assets/css/main.css"],
     components: ["~/components"],
 
     devtools: {
@@ -69,6 +69,10 @@ export default defineNuxtConfig({
         timeline: {
             enabled: true
         }
+    },
+
+    dir: {
+        pages: `pages${process.env.NUXT_PUBLIC_DIR_PAGES}`
     },
 
     experimental: {
@@ -130,22 +134,21 @@ export default defineNuxtConfig({
     },
 
     modules: [
-        "@nuxt/eslint",
-        "@nuxt/fonts",
-        "@nuxt/icon",
-        "@nuxt/image",
-        "@nuxthub/core",
-        "@nuxtjs/i18n",
-        "@nuxtjs/seo",
-        "@nuxtjs/strapi",
-        "@nuxtjs/turnstile",
         "@pinia/nuxt",
-        "@primevue/nuxt-module",
         "@vueuse/nuxt",
-        "nuxt-build-cache",
-        "nuxt-marquee",
+        "@nuxt/image",
+        "@nuxt/fonts",
         "nuxt-swiper",
-        "nuxtjs-naive-ui"
+        "@nuxtjs/seo",
+        "nuxt-primevue",
+        "nuxt-marquee",
+        "@vee-validate/nuxt",
+        "nuxtjs-naive-ui",
+        "@nuxtjs/i18n",
+        "@nuxt/eslint",
+        "nuxt-build-cache",
+        "@nuxtjs/strapi",
+        "@nuxt/icon"
     ],
 
     // on Cloudflare Pages
@@ -164,17 +167,21 @@ export default defineNuxtConfig({
     ],
 
     runtimeConfig: {
-        apiUrl: "",
+        apiUrl: "" as string,
+        jwt: "" as string,
         strapi: {
-            url: "",
+            url: "" as string,
         },
         public: {
-            siteUrl: "",
-            mediaUrl: "",
-            strapi: {
-                url: process.env.NUXT_PUBLIC_SITE_URL || "",
+            domain: "" as string,
+            subdomain: "" as string,
+            mediaUrl: "" as string,
+            dir: {
+                pages: "" as string,
             },
-            jwt: "",
+            strapi: {
+                url: `https://${process.env.NUXT_PUBLIC_SUBDOMAIN || ""}${(process.env.NUXT_PUBLIC_SUBDOMAIN && process.env.NUXT_PUBLIC_SUBDOMAIN !== "") ? "." : ""}${process.env.NUXT_PUBLIC_DOMAIN}` as string,
+            }
         }
     },
 
@@ -226,34 +233,25 @@ export default defineNuxtConfig({
         usePrimeVue: true,
         components: {
             prefix: "Prime",
+            include: ["Button", "Card", "AccordionTab", "InputText", "Divider", "Dropdown", "Accordion", "SelectButton", "ScrollPanel", "InputMask", "Menu", "Skeleton", "Menubar", "PanelMenu"]
         },
         directives: {
             prefix: "p"
         },
-        options: {
-            ripple: true,
-        },
-        importTheme: {from: "@/themes/aura.js"},
+        cssLayerOrder: "reset,primevue"
     },
 
     swiper: {
         prefix: "Swiper",
-        modules: ["mousewheel", "navigation", "free-mode", "pagination", "autoplay"]
-        // modules: ["mousewheel", "navigation", "pagination", "effect-coverflow", "autoplay","free-mode"]
-    },
-    strapi: {
-        devtools: true,
-        cookieName: "str_jwt",
-        version: "v4",
+        modules: ["mousewheel", "pagination", "autoplay", "free-mode"]
+        // modules: ["navigation", "pagination", "effect-coverflow", "autoplay"]
     },
 
-    pinia: {
-        storesDirs: ["./stores/**",]
-    },
     // seo
     site: {
-        url: process.env.NUXT_PUBLIC_SITE_URL,
-        name: process.env.NAME_SITE
+        url: `https://${process.env.NUXT_PUBLIC_SUBDOMAIN || ""}${(process.env.NUXT_PUBLIC_SUBDOMAIN && process.env.NUXT_PUBLIC_SUBDOMAIN !== "") ? "." : ""}${process.env.NUXT_PUBLIC_DOMAIN}`,
+        name: process.env.NAME_SITE,
+        defaultLocale: "uk",
     },
 
     seo: {
@@ -271,20 +269,20 @@ export default defineNuxtConfig({
         identity: {
             type: "Organization",
             name: process.env.NAME_ORGANIZATION as string,
-            url: process.env.NUXT_PUBLIC_SITE_URL,
+            url: `https://${process.env.NUXT_PUBLIC_SUBDOMAIN || ""}${(process.env.NUXT_PUBLIC_SUBDOMAIN && process.env.NUXT_PUBLIC_SUBDOMAIN !== "") ? "." : ""}${process.env.NUXT_PUBLIC_DOMAIN}`,
             logo: ""
         }
     },
 
-    // veeValidate: {
-    //     autoImports: true,
-    //     componentNames: {
-    //         Form: "VeeForm",
-    //         Field: "VeeField",
-    //         FieldArray: "VeeFieldArray",
-    //         ErrorMessage: "VeeErrorMessage",
-    //     },
-    // },
+    veeValidate: {
+        autoImports: true,
+        componentNames: {
+            Form: "VeeForm",
+            Field: "VeeField",
+            FieldArray: "VeeFieldArray",
+            ErrorMessage: "VeeErrorMessage",
+        },
+    },
 
     compatibilityDate: "2024-08-07",
 })
