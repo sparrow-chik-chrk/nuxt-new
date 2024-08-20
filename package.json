@@ -23,6 +23,8 @@
     "@nuxtjs/turnstile": "^0.9.3",
     "@pinia/nuxt": "^0.5.3",
     "@primevue/themes": "^4.0.4",
+    "@vee-validate/nuxt": "^4.13.2",
+    "@vee-validate/zod": "^4.13.2",
     "@vueuse/core": "^10.11.1",
     "@vueuse/nuxt": "^10.11.1",
     "date-fns": "^3.6.0",

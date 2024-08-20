@@ -12,9 +12,7 @@ export default defineNuxtConfig({
     app: {
         seoMeta: {
             keywords: "",
-            charset: "utf-8",
             viewport: "width=device-width, initial-scale=1.0",
-            author: "Studnykov Danylo, Tg: @gnizDoIt",
             mobileWebAppCapable: "yes",
             appleMobileWebAppCapable: "yes",
             formatDetection: "telephone=yes",
@@ -61,7 +59,7 @@ export default defineNuxtConfig({
         // інші налаштування i18n...
     },
 
-    css: ["primevue/resources/themes/aura-light-teal/theme.css", "@animxyz/core", "primeicons/primeicons.css", "assets/css/main.css"],
+    css: ["@animxyz/core", "primeicons/primeicons.css", "assets/scss/main.scss"],
     components: ["~/components"],
 
     devtools: {
@@ -138,16 +136,16 @@ export default defineNuxtConfig({
         "@vueuse/nuxt",
         "@nuxt/image",
         "@nuxt/fonts",
-        "nuxt-swiper",
+        // "nuxt-swiper",
         "@nuxtjs/seo",
-        "nuxt-primevue",
-        "nuxt-marquee",
+        "@primevue/nuxt-module",
+        // "nuxt-marquee",
         "@vee-validate/nuxt",
-        "nuxtjs-naive-ui",
+        // "nuxtjs-naive-ui",
         "@nuxtjs/i18n",
         "@nuxt/eslint",
         "nuxt-build-cache",
-        "@nuxtjs/strapi",
+        // "@nuxtjs/strapi",
         "@nuxt/icon"
     ],
 
@@ -191,11 +189,11 @@ export default defineNuxtConfig({
         }
     },
 
-    vue: {
-        compilerOptions: {
-            isCustomElement: (tag) => tag === "tbx-modal"
-        }
-    },
+    // vue: {
+    //     compilerOptions: {
+    //         isCustomElement: (tag) => tag === "tbx-modal"
+    //     }
+    // },
 
     vite: {
         plugins: [
@@ -230,23 +228,28 @@ export default defineNuxtConfig({
 
     // module
     primevue: {
-        usePrimeVue: true,
         components: {
-            prefix: "Prime",
-            include: ["Button", "Card", "AccordionTab", "InputText", "Divider", "Dropdown", "Accordion", "SelectButton", "ScrollPanel", "InputMask", "Menu", "Skeleton", "Menubar", "PanelMenu"]
+            autoimport: true,
+            include: ["ScrollPanel"]
         },
-        directives: {
-            prefix: "p"
+        options: {
+            ripple: true,
         },
-        cssLayerOrder: "reset,primevue"
+        importTheme: {from: "@/themes/aura.js"},
     },
-
-    swiper: {
-        prefix: "Swiper",
-        modules: ["mousewheel", "pagination", "autoplay", "free-mode"]
-        // modules: ["navigation", "pagination", "effect-coverflow", "autoplay"]
+// strapi: {
+//         devtools: true,
+//         cookieName: "str_jwt",
+//         version: "v4",
+//     },
+//     swiper: {
+//         prefix: "Swiper",
+//         modules: ["mousewheel", "pagination", "autoplay", "free-mode"]
+//         // modules: ["navigation", "pagination", "effect-coverflow", "autoplay"]
+//     },
+pinia: {
+        storesDirs: ["./stores/**",]
     },
-
     // seo
     site: {
         url: `https://${process.env.NUXT_PUBLIC_SUBDOMAIN || ""}${(process.env.NUXT_PUBLIC_SUBDOMAIN && process.env.NUXT_PUBLIC_SUBDOMAIN !== "") ? "." : ""}${process.env.NUXT_PUBLIC_DOMAIN}`,
